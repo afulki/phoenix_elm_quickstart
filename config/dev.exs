@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_elm_quickstart, PhoenixElmQuickstart.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("PGUSER"),
+  password: System.get_env("PGPASSWORD"),
   database: "phoenix_elm_quickstart_dev",
-  hostname: "localhost",
+  hostname: System.get_env("PGHOSTADDR"),
   pool_size: 10
